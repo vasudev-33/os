@@ -1,11 +1,11 @@
-obj-m += sys_xintegrity.o
+obj-m += sys_xconcat.o
 
-all: xhw1 xintegrity
+all: xhw1 xconcat
 
 xhw1: xhw1.c
 	gcc -Wall -Werror -I/lib/modules/$(shell uname -r)/build/arch/x86/include xhw1.c -o xhw1
 
-xintegrity:
+xconcat:
 	make -Wall -Werror -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
 
 clean:

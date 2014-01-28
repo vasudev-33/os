@@ -3,14 +3,14 @@
 #include <stdlib.h>
 #include <errno.h>
 
-#define __NR_xintegrity	349	/* our private syscall number */
+#define __NR_xconcat	349	/* our private syscall number */
 
 int main(int argc, char *argv[])
 {
 	int rc;
 	void *dummy = (void *) atoi(argv[1]);
 
-  	rc = syscall(__NR_xintegrity, dummy);
+  	rc = syscall(__NR_xconcat, dummy);
 	if (rc == 0)
 		printf("syscall returned %d\n", rc);
 	else
